@@ -2,17 +2,19 @@
 
 - **Intern Name:** Zakia Azhar
 - **Internship Domain:** Full-Stack Engineering
-- **Week Number:** Week 1 (Month 1)
+- **Week Number:** Week 2 (Month 1)
 
 ## Task / Project Description
-- **Task 1: GitHub Setup.** Created a GitHub repository, added a README, made meaningful commits and pushed the project.
-- **Task 2: Personal Profile Webpage.** Built an HTML-only personal profile / developer introduction page with header, navigation, About, Skills, Education, Experience, Contact and footer sections.
+Week 2: Responsive Personal Portfolio. I took my Week 1 HTML profile page and styled it with CSS3. The page uses Flexbox and CSS Grid and works on desktop, tablet and mobile screens.
+
+## Live Demo
+https://zakiyamalik03-cyber.github.io/aurex-web-internship-zakiaazhar/
 
 ## Technologies Used
-- HTML5 (semantic elements: header, nav, main, section, article, footer)
-- Git
-- GitHub
-- Visual Studio Code
+- HTML5 (semantic elements)
+- CSS3 (variables, Flexbox, Grid, media queries)
+- Git and GitHub
+- GitHub Pages (deployment)
 
 ## How to Run the Project
 1. Clone the repository:
@@ -23,13 +25,12 @@
 3. Double-click `index.html` to open it in Chrome or Edge.
 
 ## What I Learned
-- Setting up VS Code, Git and GitHub
-- Basic Git commands: init, add, commit, push
-- Writing meaningful commit messages
-- Structure of an HTML5 document
-- Semantic HTML elements and a logical heading hierarchy
-- Links, images with alt text, lists, tables and forms with labels
+- CSS selectors, colours, fonts and the box model
+- Flexbox for the menu and skill tags
+- CSS Grid for the Education section
+- Media queries and the mobile-first approach
+- Basic UI/UX: spacing, readable text and consistent colours
+- Deploying a website with GitHub Pages
 
 ## Known Limitations / Issues
-- The page has no CSS yet, because CSS is not required in Week 1. Styling will be added in Week 2.
-- The contact form does not send messages yet, as it needs JavaScript or a backend.
+- The contact form does not send messages yet, because it needs JavaScript or a backend.

@@ -1,0 +1,257 @@
+/* ===== AUREX Week 2: style.css =====
+   Mobile-first: base styles are for phones.
+   Media queries below add changes for tablet (768px) and desktop (1024px). */
+
+/* ---------- 1. Colours and fonts (CSS variables) ---------- */
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --text: #1f2933;
+  --muted: #5b6673;
+  --accent: #0f6b6b;
+  --accent-dark: #0a4d4d;
+  --line: #d9dee4;
+  --space: 1.25rem;
+}
+
+/* ---------- 2. Base / reset ---------- */
+* {
+  box-sizing: border-box;   /* padding and border stay inside width */
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.25;
+  margin: 0 0 0.6rem;
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.1rem; }
+
+p { margin: 0 0 0.9rem; max-width: 65ch; }
+
+a { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
+
+/* ---------- 3. Header and navigation ---------- */
+header {
+  background: var(--accent-dark);
+  color: #ffffff;
+  padding: 2.5rem var(--space) 1.5rem;
+  text-align: center;
+}
+
+header p {
+  margin: 0 auto 1.25rem;
+  color: #d4ecec;
+}
+
+nav ul {
+  display: flex;            /* Flexbox: items in one row */
+  flex-wrap: wrap;          /* wrap to next line on small screens */
+  justify-content: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  background: #ffffff;
+  color: var(--accent-dark);
+}
+
+/* ---------- 4. Main content and sections ---------- */
+main {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: var(--space);
+}
+
+section {
+  background: var(--surface);
+  border-left: 5px solid var(--accent);
+  padding: var(--space);
+  margin-bottom: var(--space);
+}
+
+section h2 {
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1rem;
+}
+
+/* ---------- 5. Skills (Flexbox tags) ---------- */
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+#skills ul li {
+  background: #e6f2f2;
+  color: var(--accent-dark);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+}
+
+#skills ol { margin: 0; padding-left: 1.4rem; }
+
+/* ---------- 6. Education and experience (articles) ---------- */
+article {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed var(--line);
+}
+
+article:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+article p { margin-bottom: 0.3rem; color: var(--muted); }
+article ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+
+/* ---------- 7. Projects table ---------- */
+table {
+  display: block;           /* lets the table scroll sideways on phones */
+  overflow-x: auto;
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+}
+
+caption {
+  text-align: left;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+}
+
+th, td {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--line);
+  text-align: left;
+  white-space: nowrap;
+}
+
+th { background: #e6f2f2; }
+
+/* ---------- 8. Contact form ---------- */
+form { max-width: 30rem; margin-top: 1rem; }
+
+label { font-weight: 600; }
+
+input,
+textarea {
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid #aeb7c1;
+  border-radius: 6px;
+  font: inherit;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #f2b705;
+  outline-offset: 2px;
+}
+
+button {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.4rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover { background: var(--accent-dark); }
+
+/* ---------- 9. Footer ---------- */
+footer {
+  text-align: center;
+  padding: 1.5rem var(--space);
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+footer p { margin: 0 auto; }
+
+/* ================= TABLET (768px and up) ================= */
+@media (min-width: 768px) {
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 1.8rem; }
+
+  header { padding: 3.5rem 2rem 2rem; }
+
+  main { padding: 2rem; }
+
+  section { padding: 1.75rem; margin-bottom: 1.5rem; }
+
+  /* CSS Grid: Education articles sit side by side */
+  #education {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2rem;
+  }
+
+  #education h2 { grid-column: 1 / -1; }
+
+  #education article {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* ================= DESKTOP (1024px and up) ================= */
+@media (min-width: 1024px) {
+  h1 { font-size: 3.4rem; }
+
+  header { padding: 4.5rem 2rem 2.5rem; }
+
+  main { padding: 2.5rem 2rem; }
+
+  section { padding: 2.25rem 2.5rem; }
+
+  /* Skills tags a little bigger on desktop */
+  #skills ul li { padding: 0.4rem 1rem; }
+}
+
+/* Respect people who turn off animations */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
