@@ -1,0 +1,159 @@
+/* ===== Week 3 Task Manager: style.css ===== */
+
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --text: #1f2933;
+  --muted: #5b6673;
+  --accent: #0f6b6b;
+  --accent-dark: #0a4d4d;
+  --line: #d9dee4;
+  --danger: #b3261e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 0 0 0.6rem;
+}
+
+header {
+  background: var(--accent-dark);
+  color: #ffffff;
+  text-align: center;
+  padding: 2.2rem 1.25rem 1.8rem;
+}
+
+header h1 { font-size: 2.2rem; }
+header p { margin: 0; color: #d4ecec; }
+
+main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+section {
+  background: var(--surface);
+  border-left: 5px solid var(--accent);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ----- Form ----- */
+label { font-weight: 600; }
+
+.form-row {
+  display: flex;          /* Flexbox: input and button in one row */
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+input[type="text"] {
+  flex: 1 1 14rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #aeb7c1;
+  border-radius: 6px;
+  font: inherit;
+}
+
+button {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.65rem 1.2rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover { background: var(--accent-dark); }
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #f2b705;
+  outline-offset: 2px;
+}
+
+/* ----- Message (error / success) ----- */
+#message {
+  min-height: 1.5rem;
+  margin: 0.6rem 0 0;
+  font-weight: 600;
+}
+
+#message.error { color: var(--danger); }
+#message.success { color: var(--accent-dark); }
+
+/* ----- Task list ----- */
+#counter { margin: 0 0 0.8rem; color: var(--muted); }
+
+#task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#task-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+#task-list li:last-child { border-bottom: none; }
+
+#task-list input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: var(--accent);
+}
+
+.task-text {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+/* Completed task look */
+li.completed .task-text {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.delete-btn {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  padding: 0.3rem 0.8rem;
+}
+
+.delete-btn:hover {
+  background: var(--danger);
+  color: #ffffff;
+}
+
+#empty-message { color: var(--muted); margin: 0; }
+
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: var(--muted);
+}
+
+/* Bigger screens */
+@media (min-width: 768px) {
+  header h1 { font-size: 2.8rem; }
+  main { padding: 2rem; }
+  section { padding: 1.75rem; }
+}
