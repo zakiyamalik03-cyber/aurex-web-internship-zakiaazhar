@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Task Management Application built with HTML, CSS, vanilla JavaScript and localStorage (Week 4).">
+  <title>Task Management App | Zakia Azhar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Task Management App</h1>
+    <p>Add, edit, filter and save your tasks</p>
+  </header>
+
+  <main>
+
+    <section id="add-task">
+      <h2>Add a Task</h2>
+      <form id="task-form">
+        <label for="task-input">New task</label>
+        <div class="form-row">
+          <input type="text" id="task-input" placeholder="e.g. Practice JavaScript loops" autocomplete="off">
+          <button type="submit">Add Task</button>
+        </div>
+      </form>
+      <p id="message" role="alert"></p>
+    </section>
+
+    <section id="my-tasks">
+      <h2>My Tasks</h2>
+
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter-btn" data-filter="active" aria-pressed="false">Active</button>
+        <button type="button" class="filter-btn" data-filter="completed" aria-pressed="false">Completed</button>
+      </div>
+
+      <p id="counter"></p>
+      <ul id="task-list"></ul>
+      <p id="empty-message"></p>
+
+      <button type="button" id="clear-completed" class="secondary-btn">Clear completed tasks</button>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Zakia Azhar. AUREX Web Internship, Week 4.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

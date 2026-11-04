@@ -1,0 +1,218 @@
+/* ===== Week 4 Task Management App: style.css ===== */
+
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --text: #1f2933;
+  --muted: #5b6673;
+  --accent: #0f6b6b;
+  --accent-dark: #0a4d4d;
+  --accent-light: #e6f2f2;
+  --line: #d9dee4;
+  --danger: #b3261e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 0 0 0.6rem;
+}
+
+header {
+  background: var(--accent-dark);
+  color: #ffffff;
+  text-align: center;
+  padding: 2.2rem 1.25rem 1.8rem;
+}
+
+header h1 { font-size: 2.2rem; }
+header p { margin: 0; color: #d4ecec; }
+
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+section {
+  background: var(--surface);
+  border-left: 5px solid var(--accent);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ----- Form ----- */
+label { font-weight: 600; }
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+input[type="text"] {
+  flex: 1 1 14rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #aeb7c1;
+  border-radius: 6px;
+  font: inherit;
+}
+
+button {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.65rem 1.2rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover { background: var(--accent-dark); }
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #f2b705;
+  outline-offset: 2px;
+}
+
+/* ----- Message ----- */
+#message {
+  min-height: 1.5rem;
+  margin: 0.6rem 0 0;
+  font-weight: 600;
+}
+
+#message.error { color: var(--danger); }
+#message.success { color: var(--accent-dark); }
+
+/* ----- Filter buttons ----- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.filter-btn {
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+}
+
+.filter-btn:hover { background: #cfe6e6; }
+
+.filter-btn.active {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* ----- Task list ----- */
+#counter { margin: 0 0 0.8rem; color: var(--muted); }
+
+#task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#task-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+#task-list li:last-child { border-bottom: none; }
+
+#task-list input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: var(--accent);
+}
+
+.task-text {
+  flex: 1 1 8rem;
+  overflow-wrap: anywhere;
+}
+
+li.completed .task-text {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.edit-input {
+  flex: 1 1 10rem;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.task-actions button {
+  padding: 0.3rem 0.8rem;
+}
+
+.edit-btn,
+.cancel-btn {
+  background: transparent;
+  color: var(--accent-dark);
+  border: 1px solid var(--accent);
+}
+
+.edit-btn:hover,
+.cancel-btn:hover {
+  background: var(--accent-light);
+}
+
+.delete-btn {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.delete-btn:hover {
+  background: var(--danger);
+  color: #ffffff;
+}
+
+.secondary-btn {
+  margin-top: 1rem;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+}
+
+.secondary-btn:hover {
+  background: var(--accent-light);
+  color: var(--accent-dark);
+}
+
+#empty-message { color: var(--muted); margin: 0; }
+
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: var(--muted);
+}
+
+/* Bigger screens */
+@media (min-width: 768px) {
+  header h1 { font-size: 2.8rem; }
+  main { padding: 2rem; }
+  section { padding: 1.75rem; }
+}
